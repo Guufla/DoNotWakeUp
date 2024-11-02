@@ -68,7 +68,7 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    void StartMinigame()
+    public virtual void StartMinigame()
     {
         minigameStarted = true;
         promptCanvas.SetActive(false);
