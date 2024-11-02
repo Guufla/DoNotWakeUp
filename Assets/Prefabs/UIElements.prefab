@@ -498,6 +498,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7969a6f3a9353844398d9a86c2342600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chillsRate: 0.2
+  positiveModifier: 0.2
+  completedTaskSubtraction: 30
+  timerDemonModifier: 0
+  completedOneTask: 0
+  dead: 0
+  deathForcasted: 0
 --- !u!1 &7982732834624022642
 GameObject:
   m_ObjectHideFlags: 0

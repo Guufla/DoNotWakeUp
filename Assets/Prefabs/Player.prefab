@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 713316438195486293}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.015, y: 0.064, z: -0.001}
+  m_LocalPosition: {x: 0.015, y: 2.41, z: -0.001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -103,7 +103,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5191458012715248262}
   - component: {fileID: 1503260402507255273}
-  - component: {fileID: 1070355740231764696}
   m_Layer: 0
   m_Name: UI Main Camera
   m_TagString: MainCamera
@@ -177,14 +176,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1070355740231764696
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2933210246162895630}
-  m_Enabled: 1
 --- !u!1 &4300746893815025877
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +190,7 @@ GameObject:
   - component: {fileID: 3856690876208140770}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,10 +230,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1.4811503
+  m_Radius: 0.56928825
+  m_Height: 3.806628
   m_Direction: 1
-  m_Center: {x: 0, y: -0.25942487, z: 0}
+  m_Center: {x: 0.069288254, y: 0.903314, z: 0}
 --- !u!143 &2843826931562028272
 CharacterController:
   m_ObjectHideFlags: 0
@@ -281,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddaed40548f8f4e41a3f5676498fd610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 6
   jumpForce: 1
   sensitivity: 5
   mainCam: {fileID: 8589603309920012022}
