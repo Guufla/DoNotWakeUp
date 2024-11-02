@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 6179322727600770077}
   - component: {fileID: 2843826931562028272}
   - component: {fileID: 3856690876208140770}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,10 +189,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpForce: 1
+  jumpForce: 2
   sensitivity: 5
   mainCam: {fileID: 8589603309920012022}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 1
-  gravity: -9.81
+    m_Bits: 65
+  gravity: -50
