@@ -35,6 +35,7 @@ public class Interactable : MonoBehaviour
         if (other.GetComponent<Player>())
         {
             hasPlayer = false;
+            promptCanvas.SetActive(false);
         }
     }
 
@@ -45,9 +46,8 @@ public class Interactable : MonoBehaviour
             Vector3 direction = (interactable.position - player.position).normalized;
             Ray directRay = new Ray(player.position, direction);
             RaycastHit obstacle;
-            if (Physics.Raycast(directRay, out obstacle, col.radius * 2, ~playerLayer)) // Make sure player is looking at interactable
+            if (Physics.Raycast(directRay, out obstacle, col.radius * 2f, ~playerLayer) && !minigameStarted) // Make sure player is looking at interactable
             {
-                //Interactable hit = obstacle.collider.transform.parent.GetComponent<Interactable>();
                 if (Vector3.Dot(player.transform.TransformDirection(transform.forward), direction) > 0.5f)
                 {
                     promptCanvas.SetActive(true);
@@ -71,5 +71,6 @@ public class Interactable : MonoBehaviour
     void StartMinigame()
     {
         minigameStarted = true;
+        promptCanvas.SetActive(false);
     }
 }
