@@ -189,5 +189,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  jumpForce: 1
   sensitivity: 5
   mainCam: {fileID: 8589603309920012022}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  gravity: -9.81
