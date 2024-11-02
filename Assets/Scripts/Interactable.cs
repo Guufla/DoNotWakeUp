@@ -5,19 +5,21 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     public SphereCollider col;
-    [Tooltip("Layer to ignore when raycasting")]
-    public LayerMask interactLayer;
+    [Tooltip("Layer player is on")]
+    public LayerMask playerLayer;
     [Tooltip("Actual interactable model")]
     public Transform interactable;
-    [Tooltip("Prompt to interact")]
-    public GameObject promptCanvas;
 
     bool hasPlayer = false;
     Transform player;
+    GameObject promptCanvas;
+    bool canInteract = false; // Allows player to start minigame
+    bool minigameStarted = false;
 
     private void Start()
     {
-        player = GameManager.instance.player.transform;
+        player = GameManager.instance.player.GetComponentInChildren<Camera>().transform;
+        promptCanvas = GameManager.instance.interactPrompt;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,23 +45,31 @@ public class Interactable : MonoBehaviour
             Vector3 direction = (interactable.position - player.position).normalized;
             Ray directRay = new Ray(player.position, direction);
             RaycastHit obstacle;
-            if (Physics.Raycast(directRay, out obstacle, col.radius * 2, ~interactLayer))
+            if (Physics.Raycast(directRay, out obstacle, col.radius * 2, ~playerLayer)) // Make sure player is looking at interactable
             {
-                Player hit = obstacle.collider.transform.GetComponent<Player>();
-                if (player && Vector3.Dot(player.transform.TransformDirection(transform.forward), direction) > 0.5f)
+                //Interactable hit = obstacle.collider.transform.parent.GetComponent<Interactable>();
+                if (Vector3.Dot(player.transform.TransformDirection(transform.forward), direction) > 0.5f)
                 {
                     promptCanvas.SetActive(true);
+                    canInteract = true;
 
                 }
                 else
                 {
                     promptCanvas.SetActive(false);
+                    canInteract = false;
                 }
             }
         }
-        else
+
+        if (canInteract && Input.GetKey(KeyCode.E))
         {
-            promptCanvas.SetActive(false);
+            StartMinigame();
         }
+    }
+
+    void StartMinigame()
+    {
+        minigameStarted = true;
     }
 }

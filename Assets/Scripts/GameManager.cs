@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public Player player;
+    public GameObject interactPrompt;
 
     // Start is called before the first frame update
     void Start()
