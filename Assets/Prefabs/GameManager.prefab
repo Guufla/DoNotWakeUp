@@ -59,10 +59,12 @@ MonoBehaviour:
   deathTimer: 0
   jumpScare: {fileID: 0}
   taskSlider: {fileID: 0}
-  maxTasks: 3
+  maxTasks: 4
   currentTasksCompleted: 0
   canSleep: 0
   taskList:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
