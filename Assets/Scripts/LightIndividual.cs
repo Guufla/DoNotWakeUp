@@ -18,7 +18,6 @@ public class LightIndividual : Interactable
     {   
         
         lightSource.enabled = !lightSource.enabled;
-        lightCollision.enabled = !lightCollision.enabled;
         isLight = !isLight;
     }
 

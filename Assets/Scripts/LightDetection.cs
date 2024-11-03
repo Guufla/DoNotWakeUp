@@ -14,7 +14,7 @@ public class LightDetection : MonoBehaviour
         isInLight = true;
         if (other.gameObject == player.gameObject && islight.isLight && isInLight )
         {
-            RenderSettings.fog = !RenderSettings.fog;
+            RenderSettings.fog = false;
             Debug.Log("Player is in the light");
             Debug.Log(islight.isLight);
         }
@@ -23,16 +23,29 @@ public class LightDetection : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         isInLight = false;
-        if (other.gameObject == player.gameObject && !islight.isLight && isInLight)
+        if (other.gameObject == player.gameObject && !isInLight)
         {
-            RenderSettings.fog = !RenderSettings.fog;
+            RenderSettings.fog = true;
             Debug.Log("Player is out of the Light");
             Debug.Log(islight.isLight);
         }
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject == player.gameObject && isInLight && islight.isLight)
+        {
+            Debug.Log("Player currently in the light");
+            Debug.Log(islight.isLight);
+            RenderSettings.fog = false;
+        }else{
+            Debug.Log("Player currently in the no light");
+            Debug.Log(islight.isLight);
+            RenderSettings.fog = true;
+        }
+        }
 
     // Start is called before the first frame update
-    void Start()
+        void Start()
     {
         
     }
