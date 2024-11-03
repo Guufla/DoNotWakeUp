@@ -12,6 +12,7 @@ public class LightDetection : MonoBehaviour
 
         if (other.gameObject == player.gameObject)
         {
+            RenderSettings.fog = !RenderSettings.fog;
             isInLight = true;
             Debug.Log("Player is in the light");
         }
@@ -22,6 +23,7 @@ public class LightDetection : MonoBehaviour
 
         if (other.gameObject == player.gameObject)
         {
+            RenderSettings.fog = !RenderSettings.fog;
             isInLight = false;
             Debug.Log("Player is out of the Light");
         }
