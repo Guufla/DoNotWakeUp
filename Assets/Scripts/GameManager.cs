@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     public Player player;
     public GameObject interactPrompt;
     public GameObject exitPrompt;
-    public Transform minigameCanvas;
 
     [Header("Chills Bar")]
     public Slider chillsSlider;
