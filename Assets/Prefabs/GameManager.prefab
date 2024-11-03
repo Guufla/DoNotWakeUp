@@ -48,16 +48,16 @@ MonoBehaviour:
   player: {fileID: 0}
   interactPrompt: {fileID: 0}
   exitPrompt: {fileID: 0}
-  minigameCanvas: {fileID: 0}
   chillsSlider: {fileID: 0}
   chillsRate: 1
   positiveModifier: 1
-  completedTaskSubtraction: 30
+  completedTaskSubtraction: 45
   timerDemonModifier: 0
   completedOneTask: 0
   dead: 0
   deathForcasted: 0
   deathTimer: 0
+  jumpScare: {fileID: 0}
   taskSlider: {fileID: 0}
   maxTasks: 3
   currentTasksCompleted: 0
