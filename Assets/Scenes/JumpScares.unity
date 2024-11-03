@@ -1595,6 +1595,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1442535382}
     - target: {fileID: 6611300370512496944, guid: 6f088a7e2c005c64ca124bfd0f0a4a44, type: 3}
+      propertyPath: scareVariance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611300370512496944, guid: 6f088a7e2c005c64ca124bfd0f0a4a44, type: 3}
       propertyPath: interactPrompt
       value: 
       objectReference: {fileID: 559910229}

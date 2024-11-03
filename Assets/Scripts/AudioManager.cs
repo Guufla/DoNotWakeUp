@@ -19,26 +19,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] int minSeconds;
     [SerializeField] int maxSeconds;
 
-    #region Singleton
-    private static AudioManager _instance;
-    public static AudioManager Instance
-    {
-        get => _instance;
-        private set
-        {
-            if (_instance == null)
-            {
-                _instance = value;
-                DontDestroyOnLoad(value);
-            }
-            else if (_instance != value)
-            {
-                Debug.Log($"{nameof(AudioManager)} instance already exists, destoying duplicate");
-                Destroy(value);
-            }
-        }
-    }
-    #endregion
+
+    public static AudioManager Instance;
 
     void Awake()
     {

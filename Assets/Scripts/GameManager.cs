@@ -21,8 +21,10 @@ public class GameManager : MonoBehaviour
     public Player player;
     public GameObject interactPrompt;
     public GameObject exitPrompt;
+    public int deathScreen = 2;
 
     [Header("Chills Bar")]
+    public float scareVariance = 30f;
     public Slider chillsSlider;
     [SerializeField] float chillsRate = 1f;
 
@@ -90,7 +92,7 @@ public class GameManager : MonoBehaviour
         if (chillsSlider.value >= chillsSlider.maxValue && deathForcasted == false)
         {
             deathForcasted = true;
-            deathTimer = Random.Range(1f, 30f);
+            deathTimer = Random.Range(1f, scareVariance);
 
             Debug.Log("DEATH TIMER: " + deathTimer );
 
@@ -113,6 +115,16 @@ public class GameManager : MonoBehaviour
             taskList[(int)currentTasksCompleted].GetComponent<Interactable>().SetActive(true);
         }
 
+        // Switch scene when jumpscare ends
+        if (jumpScare)
+        {
+            Animator scareAnimator = jumpScare.GetComponent<Animator>();
+            AnimatorStateInfo info = scareAnimator.GetCurrentAnimatorStateInfo(0);
+            if (info.IsName("JumpScare") && info.normalizedTime > 1)
+            {
+                SceneChanger.instance.FlashTransition(deathScreen);
+            }
+        }
     }
     void FixedUpdate()
     {

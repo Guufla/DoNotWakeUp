@@ -17,8 +17,10 @@ public class SceneChanger : MonoBehaviour
     #endregion
 
     [Header("Transitions")]
+    public bool startCalm = true;
     public Transform slowFade;
     public Transform flashFade;
+    public bool isGame = false;
 
     Animator slowFadeAnimator;
     Animator flashFadeAnimator;
@@ -30,14 +32,40 @@ public class SceneChanger : MonoBehaviour
 
     private void Start()
     {
-        slowFade.gameObject.SetActive(true);
+        if (!isGame)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        if (startCalm)
+        {
+            slowFade.gameObject.SetActive(true);
+            flashFade.gameObject.SetActive(false);
+        }
+        else
+        {
+            slowFade.gameObject.SetActive(false);
+            flashFade.gameObject.SetActive(true);
+        }
+
         slowFadeAnimator = slowFade.GetComponent<Animator>();
         flashFadeAnimator = flashFade.GetComponent<Animator>();
-        flashFade.gameObject.SetActive(false);
     }
 
     private void Update()
     {
+        AnimatorStateInfo startInfo = slowFadeAnimator.GetCurrentAnimatorStateInfo(0);
+        if (startInfo.IsName("FadeOut") && startInfo.normalizedTime > 1)
+        {
+            slowFade.gameObject.SetActive(false);
+        }
+        AnimatorStateInfo flashStartInfo = flashFadeAnimator.GetCurrentAnimatorStateInfo(0);
+        if (flashStartInfo.IsName("FlashOut") && flashStartInfo.normalizedTime > 1)
+        {
+            flashFade.gameObject.SetActive(false);
+        }
+
         if (isCalm)
         {
             AnimatorStateInfo info = slowFadeAnimator.GetCurrentAnimatorStateInfo(0);
@@ -61,6 +89,7 @@ public class SceneChanger : MonoBehaviour
 
     public void CalmTransition(int index)
     {
+        slowFade.gameObject.SetActive(true);
         slowFadeAnimator.Play("FadeIn");
         isCalm = true;
         sceneIndex = index;
