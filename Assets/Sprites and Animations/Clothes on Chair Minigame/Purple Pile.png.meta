@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 49586fd9fae874b46a09812b14b7e5bf
+<<<<<<<< HEAD:Assets/Models/KitchenAssets/Textures/Jelly.jpg.meta
+guid: 1e31b1774e634384aae7711870fa6b41
+========
+guid: 039a69cc89d4ed8458f09a463a6d3125
+>>>>>>>> main:Assets/Sprites and Animations/Clothes on Chair Minigame/Purple Pile.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

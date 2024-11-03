@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 4ed8a3664251212498c224365f245ba4
+<<<<<<<< HEAD:Assets/Models/KitchenAssets/Textures/Peanut Butter.jpg.meta
+guid: a22ff47923af5314bbb27763f3a12ccb
+========
+guid: 2f0035d5786221142a2c69fc98052b8f
+>>>>>>>> main:Assets/Sprites and Animations/Clothes on Chair Minigame/Red Pile.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

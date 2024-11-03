@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 55279dc383d2b9d498b92817c3575449
+<<<<<<<< HEAD:Assets/Sprites and Animations/Clothes on Chair Minigame/Purple Pile.png.meta
+guid: 49586fd9fae874b46a09812b14b7e5bf
+========
+guid: 1f2424ad3fe3f1748a19026bc525950c
+>>>>>>>> main:Assets/Sprites and Animations/Clothes on Chair Minigame/Shirt.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
