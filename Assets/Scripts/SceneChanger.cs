@@ -30,6 +30,7 @@ public class SceneChanger : MonoBehaviour
 
     private void Start()
     {
+        slowFade.gameObject.SetActive(true);
         slowFadeAnimator = slowFade.GetComponent<Animator>();
         flashFadeAnimator = flashFade.GetComponent<Animator>();
         flashFade.gameObject.SetActive(false);

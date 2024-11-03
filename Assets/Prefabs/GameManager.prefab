@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1685262927488896057}
   - component: {fileID: 6611300370512496944}
+  - component: {fileID: 5210600486516599365}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -58,11 +59,23 @@ MonoBehaviour:
   deathForcasted: 0
   deathTimer: 0
   taskSlider: {fileID: 0}
-  maxTasks: 3
+  maxTasks: 0
   currentTasksCompleted: 0
   canSleep: 0
   taskList:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   taskText: {fileID: 0}
+--- !u!114 &5210600486516599365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4501606974584282830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a352613d61d583c408d2d5db48f83237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowFade: {fileID: 0}
+  flashFade: {fileID: 0}
