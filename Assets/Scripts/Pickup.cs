@@ -10,12 +10,16 @@ public class Pickup : Interactable
 
     Transform playerPickupPoint;
 
+    Rigidbody rb;
+
     // Start is called before the first frame update
     public override void StartEvents()
     {
         base.StartEvents();
 
         playerPickupPoint = GameManager.instance.player.transform.GetChild(1).transform;
+
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -32,12 +36,13 @@ public class Pickup : Interactable
     public void PickUp(){
 
         Debug.Log("Picked Up");
+        rb.useGravity = false;
         pickedUp = true;
     }
 
     public void Drop(){
         Debug.Log("Dropped");
-
+        rb.useGravity = true;
         pickedUp = false;
     }   
 }
