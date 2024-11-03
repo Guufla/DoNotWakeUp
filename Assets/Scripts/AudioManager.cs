@@ -10,6 +10,15 @@ public class AudioManager : MonoBehaviour
     public bool musicEnabled = true;
     public AudioSource ambientMusicSource;
 
+    int numOfSounds;
+
+    bool timeSet;
+    float timeTillNextSound;
+
+    [Header("Min and Max Time between sounds")]
+    [SerializeField] int minSeconds;
+    [SerializeField] int maxSeconds;
+
     #region Singleton
     private static AudioManager _instance;
     public static AudioManager Instance
@@ -59,6 +68,36 @@ public class AudioManager : MonoBehaviour
         {
             ambientMusicSource.Play();
         }
+
+        timeSet = false;
+
+        numOfSounds = sounds.Length;
+    }
+
+    void Update(){
+        if(timeSet == false){
+            timeTillNextSound = UnityEngine.Random.Range(minSeconds,maxSeconds);
+            timeSet = true;
+            Debug.Log("time till next sound" + timeTillNextSound);
+        }
+    }
+    void FixedUpdate(){
+
+        if(timeSet == true && timeTillNextSound <= 1f){
+            Debug.Log("Playing a sound");
+            int indexOfSound = UnityEngine.Random.Range(0,numOfSounds);
+            Debug.Log(sounds[indexOfSound].name);
+            PlaySound(sounds[indexOfSound].name);
+
+            timeTillNextSound = 500f; // Weird but it works so leave it fr
+
+            timeSet = false;
+        }
+
+        else if(timeSet == true && timeTillNextSound > 1f){
+            timeTillNextSound -= Time.deltaTime;
+        }
+    
     }
 
     public void PlaySound(string name)

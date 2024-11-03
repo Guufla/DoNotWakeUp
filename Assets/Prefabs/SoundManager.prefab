@@ -50,10 +50,46 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 0cd9a74f33c06684e86f4f5066b41d84, type: 3}
     volume: 1
     pitch: 1
+    spatialBlend: 0
+    place: {fileID: 0}
+    loop: 0
+    source: {fileID: 0}
+  - name: doorSlam
+    clip: {fileID: 8300000, guid: ba82489d86db61d409f970e922608a73, type: 3}
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    place: {fileID: 0}
+    loop: 0
+    source: {fileID: 0}
+  - name: footStepsFast
+    clip: {fileID: 8300000, guid: eafe97fc595343f4daa320128bca1844, type: 3}
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    place: {fileID: 0}
+    loop: 0
+    source: {fileID: 0}
+  - name: floorBoardCreek
+    clip: {fileID: 8300000, guid: c0dff1e8bafa3b647bbe335f547840b9, type: 3}
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    place: {fileID: 0}
+    loop: 0
+    source: {fileID: 0}
+  - name: footstepsSlow
+    clip: {fileID: 8300000, guid: defa4d75c992e8843af633c54ed07716, type: 3}
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    place: {fileID: 0}
     loop: 0
     source: {fileID: 0}
   musicEnabled: 1
   ambientMusicSource: {fileID: 4824613596732836394}
+  minSeconds: 15
+  maxSeconds: 45
 --- !u!82 &4824613596732836394
 AudioSource:
   m_ObjectHideFlags: 0
@@ -66,7 +102,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e82011e42fab07a4fb5cd5012a782fd3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.647
   m_Pitch: 1
   Loop: 1
   Mute: 0
