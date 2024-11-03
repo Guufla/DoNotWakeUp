@@ -94,9 +94,14 @@ public class GameManager : MonoBehaviour
         }
 
 
-        taskText.text = taskList[(int)currentTasksCompleted].GetComponent<Minigame>().taskName;
+
+
+        // Task list code
+        taskText.text = taskList[(int)currentTasksCompleted].GetComponent<Interactable>().taskName;
 
         taskSlider.value = currentTasksCompleted;
+
+        taskList[(int)currentTasksCompleted].GetComponent<Interactable>().SetActive(true);
 
     }
     void FixedUpdate()
