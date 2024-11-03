@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightIndividual : MonoBehaviour
+public class LightIndividual : Interactable
 {
     [SerializeField] Light lightSource;   // Reference to the Light component
     private bool playerInRange; // Flag to check if player is within the trigger area
@@ -21,7 +21,7 @@ public class LightIndividual : MonoBehaviour
     }
 
 
-
+/*
     // Detect when the player enters the trigger area
     private void OnTriggerEnter(Collider other)
     {
@@ -44,13 +44,5 @@ public class LightIndividual : MonoBehaviour
             Debug.Log("Player out of range of light switch.");
         }
     }
-
-    private void Update()
-    {
-        // Check if player is in range and presses the interaction key (e.g., "E")
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
-        {
-            ToggleLight();
-        }
-    }
+*/
 }
