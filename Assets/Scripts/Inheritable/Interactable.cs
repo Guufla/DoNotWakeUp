@@ -15,6 +15,8 @@ public class Interactable : MonoBehaviour
     public UnityEvent interactEvent;
     [Tooltip("Event that happens when you exit interactable")]
     public UnityEvent leaveEvent;
+    [Tooltip("Name to display on task bar")]
+    public string taskName = "";
 
     bool hasPlayer = false;
     Transform player;

@@ -684,6 +684,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2209387835351047434, guid: b6ab121fce76c074bab05dbb098d0e02, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209387835351047434, guid: b6ab121fce76c074bab05dbb098d0e02, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524831243157972265, guid: b6ab121fce76c074bab05dbb098d0e02, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -797,22 +809,6 @@ PrefabInstance:
     - target: {fileID: 4300746893815025877, guid: 39f412c65d67706408a78d2c35a171e8, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6430890985886180387, guid: 39f412c65d67706408a78d2c35a171e8, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6430890985886180387, guid: 39f412c65d67706408a78d2c35a171e8, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.09433961
-      objectReference: {fileID: 0}
-    - target: {fileID: 6430890985886180387, guid: 39f412c65d67706408a78d2c35a171e8, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.00990539
-      objectReference: {fileID: 0}
-    - target: {fileID: 6430890985886180387, guid: 39f412c65d67706408a78d2c35a171e8, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
