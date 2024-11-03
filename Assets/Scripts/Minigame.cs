@@ -19,10 +19,12 @@ public class Minigame : Interactable
     public void StartMinigame()
     {
         instantiatedMinigame = Instantiate(minigameUI);
+        GameManager.instance.player.canMove = false;
     }
 
     public void LeaveMinigame()
     {
         Destroy(instantiatedMinigame);
+        GameManager.instance.player.canMove = true;
     }
 }

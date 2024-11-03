@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [Header("References")]
     public Player player;
     public GameObject interactPrompt;
+    public GameObject exitPrompt;
     public Transform minigameCanvas;
 
     [Header("Chills Bar")]
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         interactPrompt.SetActive(false);
+        exitPrompt.SetActive(false);
     }
 
     // Update is called once per frame

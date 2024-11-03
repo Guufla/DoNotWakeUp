@@ -19,6 +19,7 @@ public class Interactable : MonoBehaviour
     bool hasPlayer = false;
     Transform player;
     GameObject promptCanvas;
+    GameObject exitText;
     bool canInteract = false; // Allows player to start minigame
     bool interacted = false;
 
@@ -26,6 +27,7 @@ public class Interactable : MonoBehaviour
     {
         player = GameManager.instance.player.GetComponentInChildren<Camera>().transform;
         promptCanvas = GameManager.instance.interactPrompt;
+        exitText = GameManager.instance.exitPrompt;
         StartEvents();
     }
 
@@ -99,12 +101,14 @@ public class Interactable : MonoBehaviour
             interactEvent.Invoke();
             Debug.Log("Interacted");
             interacted = true;
+            exitText.SetActive(true);
         }
         else
         {
             leaveEvent.Invoke();
             Debug.Log("Uninteract");
             interacted = false;
+            exitText.SetActive(false);
         }
     }
 
