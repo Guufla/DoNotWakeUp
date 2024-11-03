@@ -42,7 +42,6 @@ public class LockIndividual : Interactable
     //lock the this door
     public void togglelockDoor()
     {
-
         isLocked = !isLocked;
         Debug.Log($"Toggled lock state: {(isLocked ? "Locked" : "Unlocked")} door.");
     }
