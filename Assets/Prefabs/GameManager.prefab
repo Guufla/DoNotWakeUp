@@ -59,10 +59,12 @@ MonoBehaviour:
   deathForcasted: 0
   deathTimer: 0
   taskSlider: {fileID: 0}
-  maxTasks: 0
+  maxTasks: 3
   currentTasksCompleted: 0
   canSleep: 0
   taskList:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   taskText: {fileID: 0}
 --- !u!114 &5210600486516599365
