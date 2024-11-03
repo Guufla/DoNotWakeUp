@@ -1071,103 +1071,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155713436}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1243792713
+--- !u!1 &1243792713 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 9132474768027759711, guid: b6ab121fce76c074bab05dbb098d0e02, type: 3}
+  m_PrefabInstance: {fileID: 5245149576044426180}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1243792714}
-  - component: {fileID: 1243792717}
-  - component: {fileID: 1243792716}
-  - component: {fileID: 1243792715}
-  m_Layer: 5
-  m_Name: JumpScare
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1243792714
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1243792713}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1811736343}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030518, y: -0.0089684}
-  m_SizeDelta: {x: 1920, y: 1261}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1243792715
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1243792713}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1d75d27f3ce20a5448b458a357984258, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1243792716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1243792713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 1868933338, guid: 19350ac07877ad54cb145be783582d8f, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1243792717
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1243792713}
-  m_CullTransparentMesh: 1
 --- !u!1 &1396345432 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6948093137258693794, guid: a2bfb4445a4a2af43a5b6f3220c1d9ab, type: 3}
@@ -1344,11 +1252,6 @@ Transform:
   - {fileID: 792599870}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &1811736343 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1469442512854840949, guid: b6ab121fce76c074bab05dbb098d0e02, type: 3}
-  m_PrefabInstance: {fileID: 5245149576044426180}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1969190605 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3592996189240064980, guid: aa68347fb9917374a90cd909994a9307, type: 3}
@@ -1676,6 +1579,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8514761}
     - target: {fileID: 6611300370512496944, guid: 6f088a7e2c005c64ca124bfd0f0a4a44, type: 3}
+      propertyPath: jumpScare
+      value: 
+      objectReference: {fileID: 1243792713}
+    - target: {fileID: 6611300370512496944, guid: 6f088a7e2c005c64ca124bfd0f0a4a44, type: 3}
       propertyPath: exitPrompt
       value: 
       objectReference: {fileID: 104123447}
@@ -1826,10 +1733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1469442512854840949, guid: b6ab121fce76c074bab05dbb098d0e02, type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 1243792714}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6ab121fce76c074bab05dbb098d0e02, type: 3}
 --- !u!1001 &5411731712580807124
@@ -2111,26 +2015,6 @@ PrefabInstance:
     - target: {fileID: 7197256887466715317, guid: 313ae247a669f644994555e6cec542b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8539642606666127271, guid: 313ae247a669f644994555e6cec542b0, type: 3}
-      propertyPath: sounds.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8539642606666127271, guid: 313ae247a669f644994555e6cec542b0, type: 3}
-      propertyPath: sounds.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 0cd9a74f33c06684e86f4f5066b41d84, type: 3}
-    - target: {fileID: 8539642606666127271, guid: 313ae247a669f644994555e6cec542b0, type: 3}
-      propertyPath: sounds.Array.data[1].name
-      value: doorClose
-      objectReference: {fileID: 0}
-    - target: {fileID: 8539642606666127271, guid: 313ae247a669f644994555e6cec542b0, type: 3}
-      propertyPath: sounds.Array.data[1].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8539642606666127271, guid: 313ae247a669f644994555e6cec542b0, type: 3}
-      propertyPath: sounds.Array.data[1].volume
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
