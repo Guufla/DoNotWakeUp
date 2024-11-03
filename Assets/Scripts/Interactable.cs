@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
-
+    
     public SphereCollider col;
     [Tooltip("Layer player is on")]
     public LayerMask playerLayer;
@@ -61,7 +61,7 @@ public class Interactable : MonoBehaviour
             RaycastHit obstacle;
             if (Physics.Raycast(directRay, out obstacle, col.radius * 2f, ~playerLayer) && !interacted) // Make sure player is looking at interactable
             {
-                if (Vector3.Dot(player.transform.TransformDirection(player.transform.forward), direction) > 0.5f)
+                if (Vector3.Dot(player.transform.TransformDirection(transform.forward), direction) > 0.5f)
                 {
                     promptCanvas.SetActive(true);
                     canInteract = true;
