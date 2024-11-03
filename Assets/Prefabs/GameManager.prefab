@@ -49,8 +49,8 @@ MonoBehaviour:
   interactPrompt: {fileID: 0}
   exitPrompt: {fileID: 0}
   chillsSlider: {fileID: 0}
-  chillsRate: 1
-  positiveModifier: 1
+  chillsRate: 0.2
+  positiveModifier: 0.2
   completedTaskSubtraction: 45
   timerDemonModifier: 0
   completedOneTask: 0
