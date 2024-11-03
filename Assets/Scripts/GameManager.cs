@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -45,11 +46,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] float maxTasks = 0f;
 
-    [SerializeField] float currentTasksCompleted;
+    public float currentTasksCompleted;
     
     [SerializeField] bool canSleep; // WIN CONDITION
 
     public GameObject[] taskList;
+
+    [SerializeField] TextMeshProUGUI taskText; 
 
 
 
@@ -59,6 +62,7 @@ public class GameManager : MonoBehaviour
         interactPrompt.SetActive(false);
         exitPrompt.SetActive(false);
 
+        taskSlider.maxValue = maxTasks + 1;
         
         shuffleTasks(taskList);
     }
@@ -90,8 +94,9 @@ public class GameManager : MonoBehaviour
         }
 
 
+        taskText.text = taskList[(int)currentTasksCompleted].GetComponent<Minigame>().taskName;
 
-
+        taskSlider.value = currentTasksCompleted;
 
     }
     void FixedUpdate()
@@ -115,8 +120,6 @@ public class GameManager : MonoBehaviour
             int r = (int)Random.Range(i, maxTasks);
 
             (taskList[r], taskList[i]) = (taskList[i], taskList[r]);
-
-            Debug.Log(taskList[i]);
         }
     }
 

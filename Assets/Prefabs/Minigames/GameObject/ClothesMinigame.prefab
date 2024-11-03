@@ -329,5 +329,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  taskName: My Clothes are a Mess
   completed: 0
   minigameUI: {fileID: 3791915285261254109, guid: 9cff49b2e787f794f9a6deb576c1582d, type: 3}
