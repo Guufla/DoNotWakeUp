@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 223425127}
   - component: {fileID: 223425126}
   m_Layer: 6
-  m_Name: Cube
+  m_Name: Interactable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -241,11 +241,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f62c668d1ac584eb892c9a9908d0dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   col: {fileID: 223425126}
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
   interactable: {fileID: 998145090}
+  interactEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &426297196 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3856690876208140770, guid: 39f412c65d67706408a78d2c35a171e8, type: 3}
