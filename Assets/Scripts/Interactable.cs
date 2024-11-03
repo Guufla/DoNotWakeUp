@@ -1,23 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
+
     public SphereCollider col;
-    [Tooltip("Layer to ignore when raycasting")]
-    public LayerMask interactLayer;
+    [Tooltip("Layer player is on")]
+    public LayerMask playerLayer;
     [Tooltip("Actual interactable model")]
     public Transform interactable;
-    [Tooltip("Prompt to interact")]
-    public GameObject promptCanvas;
+    [Tooltip("Events to run when interacting")]
+    public UnityEvent interactEvent;
+    [Tooltip("Event that happens when you exit interactable")]
+    public UnityEvent leaveEvent;
 
     bool hasPlayer = false;
     Transform player;
+    GameObject promptCanvas;
+    bool canInteract = false; // Allows player to start minigame
+    bool interacted = false;
 
-    private void Start()
+    void Start()
     {
-        player = GameManager.instance.player.transform;
+        player = GameManager.instance.player.GetComponentInChildren<Camera>().transform;
+        promptCanvas = GameManager.instance.interactPrompt;
+        StartEvents();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,6 +42,7 @@ public class Interactable : MonoBehaviour
         if (other.GetComponent<Player>())
         {
             hasPlayer = false;
+            promptCanvas.SetActive(false);
         }
     }
 
@@ -43,23 +53,47 @@ public class Interactable : MonoBehaviour
             Vector3 direction = (interactable.position - player.position).normalized;
             Ray directRay = new Ray(player.position, direction);
             RaycastHit obstacle;
-            if (Physics.Raycast(directRay, out obstacle, col.radius * 2, ~interactLayer))
+            if (Physics.Raycast(directRay, out obstacle, col.radius * 2f, ~playerLayer) && !interacted) // Make sure player is looking at interactable
             {
-                Player hit = obstacle.collider.transform.GetComponent<Player>();
-                if (player && Vector3.Dot(player.transform.TransformDirection(transform.forward), direction) > 0.5f)
+                if (Vector3.Dot(player.transform.TransformDirection(transform.forward), direction) > 0.5f)
                 {
                     promptCanvas.SetActive(true);
+                    canInteract = true;
 
                 }
                 else
                 {
                     promptCanvas.SetActive(false);
+                    canInteract = false;
                 }
             }
         }
+
+        if (canInteract && Input.GetKeyDown(KeyCode.E))
+        {
+            Interact();
+            promptCanvas.SetActive(false);
+        }
+    }
+
+    public virtual void StartEvents()
+    {
+        // Stuff that's called when the game starts
+    }
+
+    public void Interact()
+    {
+        if (!interacted)
+        {
+            interactEvent.Invoke();
+            Debug.Log("Interacted");
+            interacted = true;
+        }
         else
         {
-            promptCanvas.SetActive(false);
+            leaveEvent.Invoke();
+            Debug.Log("Uninteract");
+            interacted = false;
         }
     }
 }
