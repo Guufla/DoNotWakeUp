@@ -17,7 +17,7 @@ public class doorMechanic : Interactable
             StartCoroutine(ResetAnimationFlag(doorAnimator.GetCurrentAnimatorStateInfo(0).length));
         }
     }
-
+    //fixed
     private IEnumerator ResetAnimationFlag(float duration)
     {
         yield return new WaitForSeconds(duration);
