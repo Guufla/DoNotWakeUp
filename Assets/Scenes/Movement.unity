@@ -1648,6 +1648,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8539642606666127271, guid: 313ae247a669f644994555e6cec542b0, type: 3}
+      propertyPath: sounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539642606666127271, guid: 313ae247a669f644994555e6cec542b0, type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cd9a74f33c06684e86f4f5066b41d84, type: 3}
+    - target: {fileID: 8539642606666127271, guid: 313ae247a669f644994555e6cec542b0, type: 3}
+      propertyPath: sounds.Array.data[1].name
+      value: doorClose
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539642606666127271, guid: 313ae247a669f644994555e6cec542b0, type: 3}
+      propertyPath: sounds.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539642606666127271, guid: 313ae247a669f644994555e6cec542b0, type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
