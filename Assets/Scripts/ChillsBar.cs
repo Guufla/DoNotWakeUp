@@ -26,8 +26,6 @@ public class ChillsBar : MonoBehaviour
 
     [SerializeField] float deathTimer;
 
-    bool died = false;
-
     Slider chillsSlider; // Reference to the chills slider
 
 
@@ -74,7 +72,7 @@ public class ChillsBar : MonoBehaviour
 
         if(deathForcasted && !dead)
         {
-            died = true;
+            dead = true;
             StartCoroutine(death());
         }
     }

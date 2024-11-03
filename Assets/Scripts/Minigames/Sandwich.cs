@@ -28,6 +28,7 @@ public class Sandwich : MonoBehaviour
     {
         timer = spawnRate - 2;
         celebrate.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame
@@ -63,6 +64,7 @@ public class Sandwich : MonoBehaviour
     {
         yield return new WaitForSeconds(winDelay);
         transform.parent.parent.GetComponent<Minigame>().CompleteMinigame();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
