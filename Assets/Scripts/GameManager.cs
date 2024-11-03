@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
     public Player player;
     public GameObject interactPrompt;
     public GameObject exitPrompt;
-    public Transform minigameCanvas;
 
     [Header("Chills Bar")]
     public Slider chillsSlider;
@@ -93,15 +92,15 @@ public class GameManager : MonoBehaviour
             StartCoroutine(Death());
         }
 
+        if (taskList.Length > 0)
+        {
+            // Task list code
+            taskText.text = taskList[(int)currentTasksCompleted].GetComponent<Interactable>().taskName;
 
+            taskSlider.value = currentTasksCompleted;
 
-
-        // Task list code
-        taskText.text = taskList[(int)currentTasksCompleted].GetComponent<Interactable>().taskName;
-
-        taskSlider.value = currentTasksCompleted;
-
-        taskList[(int)currentTasksCompleted].GetComponent<Interactable>().SetActive(true);
+            taskList[(int)currentTasksCompleted].GetComponent<Interactable>().SetActive(true);
+        }
 
     }
     void FixedUpdate()
@@ -120,11 +119,15 @@ public class GameManager : MonoBehaviour
     }
 
     void shuffleTasks(GameObject[] taskList){
-        for(int i = 0; i < maxTasks; i++){
+        if (taskList.Length != 0)
+        {
+            for (int i = 0; i < maxTasks; i++)
+            {
 
-            int r = (int)Random.Range(i, maxTasks);
+                int r = (int)Random.Range(i, maxTasks);
 
-            (taskList[r], taskList[i]) = (taskList[i], taskList[r]);
+                (taskList[r], taskList[i]) = (taskList[i], taskList[r]);
+            }
         }
     }
 

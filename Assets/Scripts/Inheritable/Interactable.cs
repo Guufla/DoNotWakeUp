@@ -51,6 +51,7 @@ public class Interactable : MonoBehaviour
         {
             hasPlayer = false;
             promptCanvas.SetActive(false);
+            exitText.SetActive(false);
         }
     }
 
