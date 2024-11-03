@@ -12,9 +12,10 @@ public class LightIndividual : Interactable
 
     [SerializeField] Collider lightCollision;
     // Method to toggle the light on/off
-    [SerializeField] public bool isLight;
+    [SerializeField] public bool isLight = false;
+
     public void ToggleLight()
-    {
+    {   
         
         lightSource.enabled = !lightSource.enabled;
         lightCollision.enabled = !lightCollision.enabled;

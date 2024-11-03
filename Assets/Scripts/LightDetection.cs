@@ -7,25 +7,27 @@ public class LightDetection : MonoBehaviour
     
     [SerializeField] bool isInLight = false;
     [SerializeField] Transform player;
+
+    [SerializeField] private LightIndividual islight;
     private void OnTriggerEnter(Collider other)
     {
-
-        if (other.gameObject == player.gameObject)
+        isInLight = true;
+        if (other.gameObject == player.gameObject && islight.isLight && isInLight )
         {
             RenderSettings.fog = !RenderSettings.fog;
-            isInLight = true;
             Debug.Log("Player is in the light");
+            Debug.Log(islight.isLight);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-
-        if (other.gameObject == player.gameObject)
+        isInLight = false;
+        if (other.gameObject == player.gameObject && !islight.isLight && isInLight)
         {
             RenderSettings.fog = !RenderSettings.fog;
-            isInLight = false;
             Debug.Log("Player is out of the Light");
+            Debug.Log(islight.isLight);
         }
     }
 
