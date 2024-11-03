@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
-
+    
     public SphereCollider col;
     [Tooltip("Layer player is on")]
     public LayerMask playerLayer;
