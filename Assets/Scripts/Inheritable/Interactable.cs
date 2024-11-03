@@ -117,6 +117,7 @@ public class Interactable : MonoBehaviour
     public void SetActive(bool state)
     {
         active = state;
+        exitText.SetActive(false);
     }
 
     /*
