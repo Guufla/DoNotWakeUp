@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public Player player;
     public GameObject interactPrompt;
     public GameObject exitPrompt;
+    public Transform minigameCanvas;
 
     [Header("Chills Bar")]
     public Slider chillsSlider;
@@ -38,11 +39,28 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] float deathTimer;
 
+
+    [Header("Task Bar")]
+    public Slider taskSlider;
+
+    [SerializeField] float maxTasks = 0f;
+
+    [SerializeField] float currentTasksCompleted;
+    
+    [SerializeField] bool canSleep; // WIN CONDITION
+
+    public GameObject[] taskList;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         interactPrompt.SetActive(false);
         exitPrompt.SetActive(false);
+
+        
+        shuffleTasks(taskList);
     }
 
     // Update is called once per frame
@@ -70,6 +88,11 @@ public class GameManager : MonoBehaviour
             dead = true;
             StartCoroutine(Death());
         }
+
+
+
+
+
     }
     void FixedUpdate()
     {
@@ -83,6 +106,17 @@ public class GameManager : MonoBehaviour
         else
         {
             chillsSlider.value += chillsRate;
+        }
+    }
+
+    void shuffleTasks(GameObject[] taskList){
+        for(int i = 0; i < maxTasks; i++){
+
+            int r = (int)Random.Range(i, maxTasks);
+
+            (taskList[r], taskList[i]) = (taskList[i], taskList[r]);
+
+            Debug.Log(taskList[i]);
         }
     }
 
