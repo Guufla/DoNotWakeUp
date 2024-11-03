@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public bool canMove = true;
     [Tooltip("How fast player moves")]
     public float speed = 10;
     [Tooltip("How high player jumps")]
@@ -49,26 +50,28 @@ public class Player : MonoBehaviour
             transform.localRotation = Quaternion.AngleAxis(currentMouseLook.x, Vector3.up); // Rotate player object to face camera direction
         }
 
-        // Jumping
-        gravityAcceleration = gravity * Time.deltaTime; // Calculate gravity acceleration
-        jumpSpeed = Mathf.Sqrt(jumpForce * -2 * gravity); // Calculate force at which player jumps, accounting for gravity
-        if (IsGrounded() && Input.GetKey(KeyCode.Space))
+        if (canMove)
         {
-            yVelocity = jumpSpeed; // Allow player to jump if grounded
+            // Jumping
+            gravityAcceleration = gravity * Time.deltaTime; // Calculate gravity acceleration
+            jumpSpeed = Mathf.Sqrt(jumpForce * -2 * gravity); // Calculate force at which player jumps, accounting for gravity
+            if (IsGrounded() && Input.GetKey(KeyCode.Space))
+            {
+                yVelocity = jumpSpeed; // Allow player to jump if grounded
+            }
+
+            yVelocity += gravityAcceleration; // Add gravity force to player
+
+            // Movement
+            sideInput = Input.GetAxis("Vertical");
+            forwardInput = Input.GetAxis("Horizontal");
+
+            Quaternion yaw = Quaternion.Euler(0, mainCam.eulerAngles.y, 0); // Take into account where player is facing
+            Vector3 movement = yaw * new Vector3(forwardInput * speed, 0, sideInput * speed);
+            movement.y = yVelocity;
+            movement *= Time.deltaTime;
+            controller.Move(movement);
         }
-
-        yVelocity += gravityAcceleration; // Add gravity force to player
-
-        // Movement
-        sideInput = Input.GetAxis("Vertical");
-        forwardInput = Input.GetAxis("Horizontal");
-
-        Quaternion yaw = Quaternion.Euler(0, mainCam.eulerAngles.y, 0); // Take into account where player is facing
-        Vector3 movement = yaw * new Vector3(forwardInput * speed, 0, sideInput * speed);
-        movement.y = yVelocity;
-        movement *= Time.deltaTime;
-        controller.Move(movement);
-
     }
 
     bool IsGrounded() // Check if player is on ground
