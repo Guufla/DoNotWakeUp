@@ -7,6 +7,7 @@ public class Minigame : Interactable
     public bool completed = false;
     [Header("Minigame")]
     public GameObject minigameUI;
+    public AudioSource minigameWin;
 
     GameObject instantiatedMinigame;
 
@@ -30,6 +31,10 @@ public class Minigame : Interactable
     {
         GameManager.instance.currentTasksCompleted += 1;
         completed = true;
+        if (minigameWin)
+        {
+            minigameWin.Play();
+        }
         SetActive(false);
         Interact();
     }

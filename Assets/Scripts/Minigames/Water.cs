@@ -37,7 +37,7 @@ public class Water : MonoBehaviour
                 UpdateImageDisplay();
             }else{
                 if(progress >= 0.06){
-                progress -= subtractprogress;  // Adjust increment as needed
+                progress -= subtractprogress * Time.deltaTime;  // Adjust increment as needed
                 progressBar.value = progress;
                 }
             }
