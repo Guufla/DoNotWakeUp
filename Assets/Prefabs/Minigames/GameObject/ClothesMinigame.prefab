@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6322069afbcad9a4d8d95a508887aaac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   col: {fileID: 8558391432232258295}
   playerLayer:
     serializedVersion: 2
@@ -329,5 +329,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  taskName: My Clothes are a Mess
   completed: 0
   minigameUI: {fileID: 3791915285261254109, guid: 9cff49b2e787f794f9a6deb576c1582d, type: 3}

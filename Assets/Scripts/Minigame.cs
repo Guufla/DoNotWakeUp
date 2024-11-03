@@ -10,6 +10,8 @@ public class Minigame : Interactable
 
     GameObject instantiatedMinigame;
 
+    
+
     public void StartMinigame()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -26,6 +28,7 @@ public class Minigame : Interactable
 
     public void CompleteMinigame()
     {
+        GameManager.instance.currentTasksCompleted += 1;
         completed = true;
         SetActive(false);
         Interact();

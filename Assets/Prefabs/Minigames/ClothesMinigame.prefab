@@ -408,7 +408,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &7898904179528332141
 MonoBehaviour:
@@ -1020,5 +1020,6 @@ MonoBehaviour:
   - {fileID: 3776259522032717446, guid: 535b8660f07a0c344aa90845356295f2, type: 3}
   - {fileID: 7242970135701525976, guid: 54483319941fa3642875cfa574928ff1, type: 3}
   - {fileID: 5115211933035661894, guid: 224f33c1b9bdcb94da685920fd662c3f, type: 3}
+  - {fileID: 5151370663317264841, guid: 078cf12a5ed6a3443acee5b999cf8633, type: 3}
   celebrate: {fileID: 473376793629923616}
   winDelay: 2

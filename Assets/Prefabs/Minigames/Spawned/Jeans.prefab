@@ -28,9 +28,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3241425538095741450}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 2, z: 1}
+  m_LocalScale: {x: 2.5, y: 1.67, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 33f55fc977d86db4f990ce0e3d84f83f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9ed444892b5a06f4a9090e7df0e80bf3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -95,6 +95,9 @@ MonoBehaviour:
   throwForce: 9000
   rb: {fileID: 2624292022497603742}
   gravityScale: 50
+  spriteIcon: {fileID: 6447593210466609060}
+  pileIcon: {fileID: 21300000, guid: 9ed444892b5a06f4a9090e7df0e80bf3, type: 3}
+  dragIcon: {fileID: 21300000, guid: 33f55fc977d86db4f990ce0e3d84f83f, type: 3}
 --- !u!50 &2624292022497603742
 Rigidbody2D:
   serializedVersion: 4
