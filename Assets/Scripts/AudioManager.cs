@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public bool musicEnabled = true;
+    public AudioSource ambientMusicSource;
 
     #region Singleton
     private static AudioManager _instance;
@@ -47,7 +48,10 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-
+        if (musicEnabled)
+        {
+            ambientMusicSource.Play();
+        }
     }
 
     public void PlaySound(string name)
