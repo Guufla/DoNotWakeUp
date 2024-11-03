@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &104123447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9066015298644891707, guid: b6ab121fce76c074bab05dbb098d0e02, type: 3}
+  m_PrefabInstance: {fileID: 5245149576044426180}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &223425121
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,6 +867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 426297196}
   interactPrompt: {fileID: 559910229}
+  exitPrompt: {fileID: 104123447}
   minigameCanvas: {fileID: 0}
   chillsSlider: {fileID: 1442535382}
   chillsRate: 1

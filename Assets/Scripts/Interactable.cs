@@ -19,6 +19,7 @@ public class Interactable : MonoBehaviour
     bool hasPlayer = false;
     Transform player;
     GameObject promptCanvas;
+    GameObject exitText;
     bool canInteract = false; // Allows player to start minigame
     bool interacted = false;
 
@@ -26,6 +27,7 @@ public class Interactable : MonoBehaviour
     {
         player = GameManager.instance.player.GetComponentInChildren<Camera>().transform;
         promptCanvas = GameManager.instance.interactPrompt;
+        exitText = GameManager.instance.exitPrompt;
         StartEvents();
     }
 
@@ -34,6 +36,10 @@ public class Interactable : MonoBehaviour
         if (other.GetComponent<Player>())
         {
             hasPlayer = true;
+            if (interacted)
+            {
+                promptCanvas.SetActive(true);
+            }
         }
     }
 
@@ -43,7 +49,6 @@ public class Interactable : MonoBehaviour
         {
             hasPlayer = false;
             promptCanvas.SetActive(false);
-            canInteract = false;
         }
     }
 
@@ -70,7 +75,7 @@ public class Interactable : MonoBehaviour
             }
         }
 
-        if (canInteract && Input.GetKeyDown(KeyCode.E))
+        if (canInteract && Input.GetKeyDown(KeyCode.E) && hasPlayer)
         {
             Interact();
             promptCanvas.SetActive(false);
@@ -96,12 +101,20 @@ public class Interactable : MonoBehaviour
             interactEvent.Invoke();
             Debug.Log("Interacted");
             interacted = true;
+            exitText.SetActive(true);
         }
         else
         {
             leaveEvent.Invoke();
             Debug.Log("Uninteract");
             interacted = false;
+            exitText.SetActive(false);
         }
     }
+
+    /*
+     * After making a script that inherits from this script, make 2 fuctions, one for interacting and one for 'leaving'
+     * 
+     * 
+     */
 }
