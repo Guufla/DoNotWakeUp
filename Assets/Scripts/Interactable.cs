@@ -20,6 +20,8 @@ public class Interactable : MonoBehaviour
     public Transform interactable;
     [Tooltip("Events to run when interacting")]
     public UnityEvent interactEvent;
+    [Tooltip("Do opposite of interact event")]
+    public UnityEvent uninteractEvent;
 
     bool hasPlayer = false;
     Transform player;
@@ -73,7 +75,7 @@ public class Interactable : MonoBehaviour
             }
         }
 
-        if (canInteract && Input.GetKey(KeyCode.E))
+        if (canInteract && Input.GetKeyDown(KeyCode.E))
         {
             if (type == InteractableType.minigame)
             {
@@ -87,25 +89,51 @@ public class Interactable : MonoBehaviour
             {
                 Pickup();
             }
-
-            interacted = true;
             promptCanvas.SetActive(false);
         }
     }
 
     public virtual void StartMinigame()
     {
-        Debug.Log("Started minigame");
+        if (!interacted)
+        {
+            Debug.Log("Started minigame");
+            interacted = true;
+        }
+        else
+        {
+            Debug.Log("Ended minigame");
+            interacted = false;
+        }
     }
 
     public virtual void Interact()
     {
-        interactEvent.Invoke();
-        Debug.Log("Interacted");
+        if (!interacted)
+        {
+            interactEvent.Invoke();
+            Debug.Log("Interacted");
+            interacted = true;
+        }
+        else
+        {
+            uninteractEvent.Invoke();
+            Debug.Log("Uninteract");
+            interacted = false;
+        }
     }
 
     public virtual void Pickup()
     {
-        Debug.Log("Interacted");
+        if (!interacted)
+        {
+            Debug.Log("Picked up");
+            interacted = true;
+        }
+        else
+        {
+            Debug.Log("Dropped");
+            interacted = false;
+        }
     }
 }

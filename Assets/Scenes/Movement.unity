@@ -250,6 +250,9 @@ MonoBehaviour:
   interactEvent:
     m_PersistentCalls:
       m_Calls: []
+  uninteractEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &426297196 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3856690876208140770, guid: 39f412c65d67706408a78d2c35a171e8, type: 3}
