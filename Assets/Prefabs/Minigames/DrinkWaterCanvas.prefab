@@ -731,7 +731,7 @@ MonoBehaviour:
   - {fileID: 661464778882301247}
   - {fileID: 3534867691539593258}
   - {fileID: 3947783498697942715}
-  subtractprogress: 0.01
+  subtractprogress: 0.375
   celebrate: {fileID: 7055646788704593112}
   progressBar: {fileID: 8575353932609175127}
   winDelay: 2
