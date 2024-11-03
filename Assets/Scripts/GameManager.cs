@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] bool timerDemonModifier = false;
 
-    [SerializeField] bool completedOneTask = false;
+    public bool completedOneTask = false;
 
     [SerializeField] bool dead = false;
 
