@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
-    
+    public bool active = true;
     public SphereCollider col;
     [Tooltip("Layer player is on")]
     public LayerMask playerLayer;
@@ -33,7 +33,7 @@ public class Interactable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Player>())
+        if (other.GetComponent<Player>() && active)
         {
             hasPlayer = true;
             if (interacted)
@@ -45,7 +45,7 @@ public class Interactable : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<Player>())
+        if (other.GetComponent<Player>() && active)
         {
             hasPlayer = false;
             promptCanvas.SetActive(false);
@@ -54,7 +54,7 @@ public class Interactable : MonoBehaviour
 
     private void Update()
     {
-        if (hasPlayer)
+        if (hasPlayer && active)
         {
             Vector3 direction = (interactable.position - player.position).normalized;
             Ray directRay = new Ray(player.position, direction);
@@ -75,7 +75,7 @@ public class Interactable : MonoBehaviour
             }
         }
 
-        if (canInteract && Input.GetKeyDown(KeyCode.E) && hasPlayer)
+        if (canInteract && Input.GetKeyDown(KeyCode.E) && hasPlayer && active)
         {
             Interact();
             promptCanvas.SetActive(false);
@@ -110,6 +110,11 @@ public class Interactable : MonoBehaviour
             interacted = false;
             exitText.SetActive(false);
         }
+    }
+
+    public void SetActive(bool state)
+    {
+        active = state;
     }
 
     /*

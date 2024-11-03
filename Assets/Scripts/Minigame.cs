@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class Minigame : Interactable
 {
+    public bool completed = false;
     [Header("Minigame")]
     public GameObject minigameUI;
 
-    Transform canvasParent;
     GameObject instantiatedMinigame;
-
-    // Start is called before the first frame update
-    public override void StartEvents()
-    {
-        canvasParent = GameManager.instance.minigameCanvas;
-    }
 
     public void StartMinigame()
     {
-        instantiatedMinigame = Instantiate(minigameUI);
+        Cursor.lockState = CursorLockMode.None;
+        instantiatedMinigame = Instantiate(minigameUI, transform);
         GameManager.instance.player.canMove = false;
     }
 
@@ -26,5 +21,13 @@ public class Minigame : Interactable
     {
         Destroy(instantiatedMinigame);
         GameManager.instance.player.canMove = true;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void CompleteMinigame()
+    {
+        completed = true;
+        SetActive(false);
+        Interact();
     }
 }

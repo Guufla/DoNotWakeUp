@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
     {
         Vector3 start = controller.transform.TransformPoint(controller.center); // get center of player
         float rayLength = controller.height / 2 - controller.radius + 0.1f; // Distance from start to end of controller + bit extra to detect ground
-        bool hasHit = Physics.SphereCast(start, controller.radius, Vector3.down, out RaycastHit hitInfo, rayLength, groundLayer);
+        bool hasHit = Physics.SphereCast(start, controller.radius, Vector3.down, out RaycastHit hitInfo, rayLength, groundLayer, QueryTriggerInteraction.Ignore);
         return hasHit;
     }
 }
