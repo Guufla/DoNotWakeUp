@@ -2,29 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class doorMechanic : MonoBehaviour
+public class doorMechanic : Interactable
 {
     public Animator doorAnimator;
-    public float toggleInterval = 3f; // Interval in seconds
+    private bool isAnimating = false;
 
-    void Start()
+    public void ToggleDoor()
     {
-        // Start the coroutine to toggle the door every 3 seconds
-        StartCoroutine(ToggleDoorEveryInterval());
-    }
-
-    private IEnumerator ToggleDoorEveryInterval()
-    {
-        while (true)
+        if (!isAnimating)
         {
-            ToggleDoor(); // Toggle the door state
-            yield return new WaitForSeconds(toggleInterval); // Wait for 3 seconds
+            bool isOpen = doorAnimator.GetBool("isdoorOpen");
+            doorAnimator.SetBool("isdoorOpen", !isOpen);
+            isAnimating = true;
+            StartCoroutine(ResetAnimationFlag(doorAnimator.GetCurrentAnimatorStateInfo(0).length));
         }
     }
 
-    private void ToggleDoor()
+    private IEnumerator ResetAnimationFlag(float duration)
     {
-        bool isOpen = doorAnimator.GetBool("isdoorOpen");
-        doorAnimator.SetBool("isdoorOpen", !isOpen);
+        yield return new WaitForSeconds(duration);
+        isAnimating = false;
     }
 }
