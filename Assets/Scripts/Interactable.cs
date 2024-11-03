@@ -34,6 +34,10 @@ public class Interactable : MonoBehaviour
         if (other.GetComponent<Player>())
         {
             hasPlayer = true;
+            if (interacted)
+            {
+                promptCanvas.SetActive(true);
+            }
         }
     }
 
@@ -43,7 +47,6 @@ public class Interactable : MonoBehaviour
         {
             hasPlayer = false;
             promptCanvas.SetActive(false);
-            canInteract = false;
         }
     }
 
@@ -70,7 +73,7 @@ public class Interactable : MonoBehaviour
             }
         }
 
-        if (canInteract && Input.GetKeyDown(KeyCode.E))
+        if (canInteract && Input.GetKeyDown(KeyCode.E) && hasPlayer)
         {
             Interact();
             promptCanvas.SetActive(false);
@@ -104,4 +107,10 @@ public class Interactable : MonoBehaviour
             interacted = false;
         }
     }
+
+    /*
+     * After making a script that inherits from this script, make 2 fuctions, one for interacting and one for 'leaving'
+     * 
+     * 
+     */
 }
