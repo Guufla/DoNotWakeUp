@@ -45,13 +45,4 @@ public class LockIndividual : Interactable
         isLocked = !isLocked;
         Debug.Log($"Toggled lock state: {(isLocked ? "Locked" : "Unlocked")} door.");
     }
-
-    void Update()
-    {
-        //if player is in ragne and player presses E key then lock the door
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
-        {
-            togglelockDoor();
-        }
-    }
 }
