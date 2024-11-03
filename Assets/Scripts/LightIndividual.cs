@@ -15,9 +15,10 @@ public class LightIndividual : Interactable
     [SerializeField] public bool isLight;
     public void ToggleLight()
     {
-            lightSource.enabled = !lightSource.enabled;
-            lightCollision.enabled = !lightCollision.enabled;
-            isLight = !isLight;
+        
+        lightSource.enabled = !lightSource.enabled;
+        lightCollision.enabled = !lightCollision.enabled;
+        isLight = !isLight;
     }
 
 

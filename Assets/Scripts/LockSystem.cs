@@ -25,18 +25,20 @@ public class LockSystem : MonoBehaviour
         }
     }
     //returns bool value to see if all the locks area locked
-    public void AreAllLocksLocked()
+    public bool AreAllLocksLocked()
     {
         foreach (var lockObj in locks)
         {
             if (!lockObj.isLocked)
-                isAllLocked = false; // If any lock is unlocked, return false
+                return false;
+                //isAllLocked = false; // If any lock is unlocked, return false
         }
-        isAllLocked = true; // All locks are locked
+        return true;
+        //isAllLocked = true; // All locks are locked
     }
     // Update is called once per frame
     void Update()
     {
-        CheckLockStates();
+        isAllLocked = AreAllLocksLocked();
     }
 }
