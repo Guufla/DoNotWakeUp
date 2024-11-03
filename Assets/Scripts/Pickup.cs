@@ -29,7 +29,6 @@ public class Pickup : Interactable
         base.UpdateEvents();
         if(pickedUp == true){
             gameObject.transform.position = playerPickupPoint.position;
-            gameObject.transform.rotation = playerPickupPoint.rotation;
         }
     }
 
