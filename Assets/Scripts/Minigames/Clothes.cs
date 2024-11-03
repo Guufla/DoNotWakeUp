@@ -12,6 +12,9 @@ public class Clothes : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
     public float throwForce = 100f;
     public Rigidbody2D rb;
     public float gravityScale = 10f;
+    public Image spriteIcon;
+    public Sprite pileIcon;
+    public Sprite dragIcon;
 
     bool canDrag = true;
     Vector3 offset;
@@ -25,6 +28,7 @@ public class Clothes : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         offset = transform.position - Input.mousePosition; // Gets position relative to where mouse clicked
         rb.gravityScale = 0;
         rb.velocity = Vector2.zero;
+        spriteIcon.sprite = dragIcon;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -43,6 +47,7 @@ public class Clothes : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         rb.AddForceAtPosition(mouseDelta * throwForce, lastMousePos, ForceMode2D.Force);
         rb.AddTorque(mouseDelta.magnitude * mouseDelta.normalized.x * throwForce, ForceMode2D.Force);
         rb.gravityScale = gravityScale;
+        spriteIcon.sprite = pileIcon;
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
