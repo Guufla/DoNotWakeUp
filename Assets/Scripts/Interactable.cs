@@ -5,13 +5,6 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
-    public enum InteractableType
-    {
-        minigame,
-        interact,
-        pickup
-    }
-    public InteractableType type;
 
     public SphereCollider col;
     [Tooltip("Layer player is on")]
@@ -20,8 +13,8 @@ public class Interactable : MonoBehaviour
     public Transform interactable;
     [Tooltip("Events to run when interacting")]
     public UnityEvent interactEvent;
-    [Tooltip("Do opposite of interact event")]
-    public UnityEvent uninteractEvent;
+    [Tooltip("Event that happens when you exit interactable")]
+    public UnityEvent leaveEvent;
 
     bool hasPlayer = false;
     Transform player;
@@ -29,10 +22,11 @@ public class Interactable : MonoBehaviour
     bool canInteract = false; // Allows player to start minigame
     bool interacted = false;
 
-    private void Start()
+    void Start()
     {
         player = GameManager.instance.player.GetComponentInChildren<Camera>().transform;
         promptCanvas = GameManager.instance.interactPrompt;
+        StartEvents();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -77,37 +71,17 @@ public class Interactable : MonoBehaviour
 
         if (canInteract && Input.GetKeyDown(KeyCode.E))
         {
-            if (type == InteractableType.minigame)
-            {
-                StartMinigame();
-            }
-            else if (type == InteractableType.interact)
-            {
-                Interact();
-            }
-            else
-            {
-                Pickup();
-            }
+            Interact();
             promptCanvas.SetActive(false);
         }
     }
 
-    public virtual void StartMinigame()
+    public virtual void StartEvents()
     {
-        if (!interacted)
-        {
-            Debug.Log("Started minigame");
-            interacted = true;
-        }
-        else
-        {
-            Debug.Log("Ended minigame");
-            interacted = false;
-        }
+        // Stuff that's called when the game starts
     }
 
-    public virtual void Interact()
+    public void Interact()
     {
         if (!interacted)
         {
@@ -117,22 +91,8 @@ public class Interactable : MonoBehaviour
         }
         else
         {
-            uninteractEvent.Invoke();
+            leaveEvent.Invoke();
             Debug.Log("Uninteract");
-            interacted = false;
-        }
-    }
-
-    public virtual void Pickup()
-    {
-        if (!interacted)
-        {
-            Debug.Log("Picked up");
-            interacted = true;
-        }
-        else
-        {
-            Debug.Log("Dropped");
             interacted = false;
         }
     }

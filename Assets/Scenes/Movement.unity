@@ -133,8 +133,8 @@ GameObject:
   - component: {fileID: 223425125}
   - component: {fileID: 223425124}
   - component: {fileID: 223425123}
-  - component: {fileID: 223425127}
   - component: {fileID: 223425126}
+  - component: {fileID: 223425127}
   m_Layer: 6
   m_Name: Interactable
   m_TagString: Untagged
@@ -238,10 +238,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 223425121}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02f62c668d1ac584eb892c9a9908d0dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 6322069afbcad9a4d8d95a508887aaac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
   col: {fileID: 223425126}
   playerLayer:
     serializedVersion: 2
@@ -249,10 +248,35 @@ MonoBehaviour:
   interactable: {fileID: 998145090}
   interactEvent:
     m_PersistentCalls:
-      m_Calls: []
-  uninteractEvent:
+      m_Calls:
+      - m_Target: {fileID: 223425127}
+        m_TargetAssemblyTypeName: Minigame, Assembly-CSharp
+        m_MethodName: StartMinigame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  leaveEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 223425127}
+        m_TargetAssemblyTypeName: Minigame, Assembly-CSharp
+        m_MethodName: LeaveMinigame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  minigameUI: {fileID: 0}
 --- !u!114 &426297196 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3856690876208140770, guid: 39f412c65d67706408a78d2c35a171e8, type: 3}

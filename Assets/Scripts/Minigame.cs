@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Minigame : MonoBehaviour
+public class Minigame : Interactable
 {
+    [Header("Minigame")]
+    public GameObject minigameUI;
+
+    Transform canvasParent;
+
     // Start is called before the first frame update
-    void Start()
+    public override void StartEvents()
     {
-        
+        canvasParent = GameManager.instance.minigameCanvas;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartMinigame()
     {
-        
+
+    }
+
+    public void LeaveMinigame()
+    {
+
     }
 }
