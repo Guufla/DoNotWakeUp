@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     public Player player;
     public GameObject interactPrompt;
     public GameObject exitPrompt;
-    public Transform minigameCanvas;
 
     [Header("Chills Bar")]
     public Slider chillsSlider;
@@ -61,13 +60,14 @@ public class GameManager : MonoBehaviour
         // Once the death is forecasted they cannot lower 
         if (chillsSlider.value >= chillsSlider.maxValue && deathForcasted == false)
         {
-            deathTimer = Random.Range(1f, 30f);
             deathForcasted = true;
+            deathTimer = Random.Range(1f, 30f);
             Debug.Log(deathTimer);
         }
 
-        if (deathForcasted)
+        if (deathForcasted && !dead)
         {
+            dead = true;
             StartCoroutine(Death());
         }
     }
