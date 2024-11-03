@@ -13,8 +13,17 @@ public class doorMechanic : Interactable
         {
             bool isOpen = doorAnimator.GetBool("isdoorOpen");
             doorAnimator.SetBool("isdoorOpen", !isOpen);
-            isAnimating = true;
-            StartCoroutine(ResetAnimationFlag(doorAnimator.GetCurrentAnimatorStateInfo(0).length));
+            if (isOpen)
+            {
+                doorAnimator.Play("openDoor");
+            }
+            else
+            {
+                doorAnimator.Play("openDoor");
+            }
+
+            //isAnimating = true;
+            //StartCoroutine(ResetAnimationFlag(doorAnimator.GetCurrentAnimatorStateInfo(0).length));
         }
     }
     //fixed

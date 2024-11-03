@@ -51,6 +51,7 @@ public class Interactable : MonoBehaviour
         {
             hasPlayer = false;
             promptCanvas.SetActive(false);
+            exitText.SetActive(false);
         }
     }
 
@@ -63,7 +64,7 @@ public class Interactable : MonoBehaviour
             RaycastHit obstacle;
             if (Physics.Raycast(directRay, out obstacle, col.radius * 2f, ~playerLayer) && !interacted) // Make sure player is looking at interactable
             {
-                if (Vector3.Dot(player.transform.TransformDirection(transform.forward), direction) > 0.5f)
+                if (Vector3.Dot(player.transform.TransformDirection(Vector3.forward), direction) > 0.5f)
                 {
                     promptCanvas.SetActive(true);
                     canInteract = true;
