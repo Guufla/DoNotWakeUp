@@ -43,6 +43,7 @@ public class Interactable : MonoBehaviour
         {
             hasPlayer = false;
             promptCanvas.SetActive(false);
+            canInteract = false;
         }
     }
 
@@ -90,7 +91,6 @@ public class Interactable : MonoBehaviour
 
     public void Interact()
     {
-        canInteract = false;
         if (!interacted)
         {
             interactEvent.Invoke();
