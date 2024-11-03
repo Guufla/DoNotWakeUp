@@ -234,11 +234,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8539642606666127271, guid: 313ae247a669f644994555e6cec542b0, type: 3}
       propertyPath: maxSeconds
-      value: 20
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 8539642606666127271, guid: 313ae247a669f644994555e6cec542b0, type: 3}
       propertyPath: minSeconds
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8539642606666127271, guid: 313ae247a669f644994555e6cec542b0, type: 3}
       propertyPath: sounds.Array.size
