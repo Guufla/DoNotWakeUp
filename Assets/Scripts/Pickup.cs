@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pickup : Interactable
 {
-    
+
 
     // Start is called before the first frame update
     public override void StartEvents()
@@ -17,4 +17,12 @@ public class Pickup : Interactable
     {
         base.UpdateEvents();
     }
+
+    public void PickUp(){
+        Debug.Log("Picked Up");
+    }
+
+    public void Drop(){
+        Debug.Log("Dropped");
+    }   
 }
