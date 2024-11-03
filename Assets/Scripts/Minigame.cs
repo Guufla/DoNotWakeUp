@@ -8,6 +8,7 @@ public class Minigame : Interactable
     public GameObject minigameUI;
 
     Transform canvasParent;
+    GameObject instantiatedMinigame;
 
     // Start is called before the first frame update
     public override void StartEvents()
@@ -17,11 +18,11 @@ public class Minigame : Interactable
 
     public void StartMinigame()
     {
-
+        instantiatedMinigame = Instantiate(minigameUI);
     }
 
     public void LeaveMinigame()
     {
-
+        Destroy(instantiatedMinigame);
     }
 }
