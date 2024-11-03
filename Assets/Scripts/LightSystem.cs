@@ -2,55 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightSwitch : MonoBehaviour
+public class LightSystemHigher : MonoBehaviour
 {
-    [SerializeField] Light lightSource;   // Reference to the Light component
-    private bool playerInRange; // Flag to check if player is within the trigger area
+    //get all the lights
+    [SerializeField] LightIndividual[] lights;
 
-    // Reference to the player GameObject
-    [SerializeField] Transform player;
+    [SerializeField] bool isAllLights;
 
-    [SerializeField] Collider lightCollision;
-    // Method to toggle the light on/off
-    public void ToggleLight()
+
+    void Start()
     {
-        if (playerInRange) // Only toggle if the player is in range
+        //get all the lights
+        lights = GetComponentsInChildren<LightIndividual>();
+    }
+
+    
+    public void CheckLightStates()
+    {
+        //consoel log all light states
+        foreach(var lightObj in lights)
         {
-            lightSource.enabled = !lightSource.enabled;
-            lightCollision.enabled = !lightCollision.enabled;
+            //Debug.Log($"{lightObj.name} is locked: {lightObj.isLight}");
         }
     }
 
-    // Detect when the player enters the trigger area
-    private void OnTriggerEnter(Collider other)
+
+    public void AreAllLightsOff()
     {
-        // Check if the entering object is the player
-        if (other.gameObject == player.gameObject)
+        foreach (var lightObj in lights)
         {
-            playerInRange = true;
-            
-            Debug.Log("Player in range of light switch.");
+            if(!lightObj.isLight)
+            {
+                //all lights are not off
+                isAllLights = false;
+            }
         }
+        //all lights are off
+        isAllLights = true;
     }
 
-    // Detect when the player exits the trigger area
-    private void OnTriggerExit(Collider other)
+    void Update()
     {
-        // Check if the exiting object is the player
-        if (other.gameObject == player.gameObject)
-        {
-            playerInRange = false;
-            Debug.Log("Player out of range of light switch.");
-        }
-    }
-
-    // Update method to detect input for toggling the light
-    private void Update()
-    {
-        // Check if player is in range and presses the interaction key (e.g., "E")
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
-        {
-            ToggleLight();
-        }
+        CheckLightStates();
     }
 }
