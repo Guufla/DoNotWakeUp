@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,6 +40,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] float deathTimer;
 
+    [SerializeField] GameObject jumpScare;
+
+    GameObject jumpScareSound;
+
 
     [Header("Task Bar")]
     public Slider taskSlider;
@@ -64,6 +69,9 @@ public class GameManager : MonoBehaviour
         taskSlider.maxValue = maxTasks + 1;
         
         shuffleTasks(taskList);
+
+
+        jumpScareSound = player.transform.GetChild(2).gameObject;
     }
 
     // Update is called once per frame
@@ -83,6 +91,9 @@ public class GameManager : MonoBehaviour
         {
             deathForcasted = true;
             deathTimer = Random.Range(1f, 30f);
+
+            Debug.Log("DEATH TIMER: " + deathTimer );
+
             Debug.Log(deathTimer);
         }
 
@@ -138,6 +149,7 @@ public class GameManager : MonoBehaviour
 
 
         // Replace this with whatever you want to happen once the player dies
-        Debug.Log("YOU DIED");
+        jumpScare.SetActive(true);
+        jumpScareSound.SetActive(true);
     }
 }
