@@ -90,6 +90,7 @@ public class Interactable : MonoBehaviour
 
     public void Interact()
     {
+        canInteract = false;
         if (!interacted)
         {
             interactEvent.Invoke();
