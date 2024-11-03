@@ -74,11 +74,18 @@ public class Interactable : MonoBehaviour
             Interact();
             promptCanvas.SetActive(false);
         }
+
+        UpdateEvents();
     }
 
     public virtual void StartEvents()
     {
         // Stuff that's called when the game starts
+    }
+
+    public virtual void UpdateEvents()
+    {
+        // stuff that's called on Update
     }
 
     public void Interact()
