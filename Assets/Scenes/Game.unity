@@ -13337,6 +13337,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1862938617729678726, guid: b6321719e2f056244837b5922575f3a1, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7772275057107707675, guid: b6321719e2f056244837b5922575f3a1, type: 3}
       propertyPath: m_Name
       value: DrinkWaterMinigame
