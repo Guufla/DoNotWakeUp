@@ -15,6 +15,8 @@ public class Interactable : MonoBehaviour
     public UnityEvent interactEvent;
     [Tooltip("Event that happens when you exit interactable")]
     public UnityEvent leaveEvent;
+    [Tooltip("Event that happens when an interactable is activated")]
+    public UnityEvent activateEvent;
     [Tooltip("Name to display on task bar")]
     public string taskName = "";
 
@@ -104,7 +106,10 @@ public class Interactable : MonoBehaviour
             interactEvent.Invoke();
             Debug.Log("Interacted");
             interacted = true;
-            exitText.SetActive(true);
+            if (active)
+            {
+                exitText.SetActive(true);
+            }
         }
         else
         {
@@ -118,7 +123,15 @@ public class Interactable : MonoBehaviour
     public void SetActive(bool state)
     {
         active = state;
-        exitText.SetActive(false);
+
+        if (!active)
+        {
+            exitText.SetActive(false);
+        }
+        else
+        {
+            activateEvent.Invoke();
+        }
     }
 
     /*

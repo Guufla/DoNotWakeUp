@@ -127,11 +127,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f40396ddc97e26743b371de0ac234f17, type: 3}
   m_PrefabInstance: {fileID: 1078017681}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &50216533 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8653223593144477869, guid: b6321719e2f056244837b5922575f3a1, type: 3}
-  m_PrefabInstance: {fileID: 3247936320717864304}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &178629641
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,6 +341,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  activateEvent:
+    m_PersistentCalls:
+      m_Calls: []
   taskName: 
   doorAnimator: {fileID: 452119832}
 --- !u!95 &452119832
@@ -443,18 +441,20 @@ MonoBehaviour:
   player: {fileID: 1401975568}
   interactPrompt: {fileID: 2085086071}
   exitPrompt: {fileID: 0}
-  minigameCanvas: {fileID: 0}
+  deathScreen: 2
+  lightManager: {fileID: 0}
+  scareVariance: 30
   chillsSlider: {fileID: 178629644}
   chillsRate: 1
+  lightModRate: 0.01
   positiveModifier: 1
   completedTaskSubtraction: 30
   timerDemonModifier: 0
-  completedOneTask: 0
   dead: 0
   deathForcasted: 0
   deathTimer: 0
+  jumpScare: {fileID: 0}
   taskSlider: {fileID: 0}
-  maxTasks: 0
   currentTasksCompleted: 0
   canSleep: 0
   taskList: []
@@ -1428,7 +1428,7 @@ PrefabInstance:
     - target: {fileID: 3279816318359482675, guid: b6321719e2f056244837b5922575f3a1, type: 3}
       propertyPath: interactable
       value: 
-      objectReference: {fileID: 50216533}
+      objectReference: {fileID: 0}
     - target: {fileID: 3279816318359482675, guid: b6321719e2f056244837b5922575f3a1, type: 3}
       propertyPath: leaveEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1556,6 +1556,14 @@ PrefabInstance:
     - target: {fileID: 1768264146605492338, guid: 7bd2edd21de585a45ac5da2a00382065, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176841984927576796, guid: 7bd2edd21de585a45ac5da2a00382065, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176841984927576796, guid: 7bd2edd21de585a45ac5da2a00382065, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8251336943760205174, guid: 7bd2edd21de585a45ac5da2a00382065, type: 3}
       propertyPath: col

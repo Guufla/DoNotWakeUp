@@ -97,7 +97,7 @@ MonoBehaviour:
   winDelay: 2
   toothbrushName: Toothbrush
   toothbrush: {fileID: 1292734174140860814}
-  requirement: 10
+  requirement: 25
   progressBar: {fileID: 6129186045854543991}
   celebrate: {fileID: 7947399911271560079}
 --- !u!1 &1259954774439534343

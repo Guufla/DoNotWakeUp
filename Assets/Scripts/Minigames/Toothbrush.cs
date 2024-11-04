@@ -38,7 +38,8 @@ public class Toothbrush : MonoBehaviour
 
             if (brushing)
             {
-                progress += (mouseDelta.magnitude * Time.deltaTime);
+                Debug.Log((mouseDelta.magnitude * Time.deltaTime) / ((Screen.width / 1920) + 1));
+                progress += (mouseDelta.magnitude * Time.deltaTime) / (Screen.width / 1920 + 1);
                 progressBar.value = progress / requirement;
             }
         }

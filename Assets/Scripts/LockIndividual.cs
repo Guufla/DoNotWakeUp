@@ -6,43 +6,38 @@ public class LockIndividual : Interactable
 {
     //bool to hold if lock is locked
     [SerializeField] public bool isLocked = false;
+    [Tooltip("Chance to play a visual out of 100")]
+    public float chanceOfVisual = 50f;
+    public GameObject visualObj;
+    public AudioSource visualAudio;
 
-    //bool to hold if player is in range
-    private bool playerInRange = false;
+    bool canPlayVisual = true;
 
-    //player reference
-    [SerializeField] Transform player;
-
-
-    //trigger to see if the player is in range of locking the door 
-
-    /*
-    private void OnTriggerEnter(Collider other)
+    public override void StartEvents()
     {
-        if (other.gameObject == player.gameObject)
-        {
-            Debug.Log("Player is in range");
-            //set player range  to true
-            playerInRange = true;
-        }
+        visualObj.SetActive(false);
+        base.StartEvents();
     }
 
-    //When the player moves away from the range set to false
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject == player.gameObject)
-        {
-            Debug.Log("Player is in out fo range");
-            //set player range to flase
-            playerInRange = false;
-        }
-    }
-    */
-
-    //lock the this door
+    // lock/unlock this door
     public void togglelockDoor()
     {
         isLocked = !isLocked;
-        Debug.Log($"Toggled lock state: {(isLocked ? "Locked" : "Unlocked")} door.");
+    }
+
+    public void VisualChance()
+    {
+        float rand = Random.Range(0f, 100f);
+        if (rand <= chanceOfVisual && canPlayVisual)
+        {
+            Debug.Log("visual!");
+            visualObj.SetActive(true);
+            if (visualAudio)
+            {
+                visualAudio.Play();
+            }
+        }
+
+        canPlayVisual = false;
     }
 }

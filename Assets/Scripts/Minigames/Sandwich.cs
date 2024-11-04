@@ -38,7 +38,7 @@ public class Sandwich : MonoBehaviour
         horizInput = Input.GetAxis("Horizontal");
         if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0)
         {
-            plate.AddForce(new Vector2(horizInput * speed * plate.mass, 0));
+            plate.AddForce(new Vector2(horizInput * speed * plate.mass * Time.deltaTime, 0));
             plate.velocity = Vector2.ClampMagnitude(plate.velocity, maxSpeed);
         }
 

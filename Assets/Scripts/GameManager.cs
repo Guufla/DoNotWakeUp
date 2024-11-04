@@ -22,19 +22,20 @@ public class GameManager : MonoBehaviour
     public GameObject interactPrompt;
     public GameObject exitPrompt;
     public int deathScreen = 2;
+    public LightSystemHigher lightManager;
 
     [Header("Chills Bar")]
     public float scareVariance = 30f;
     public Slider chillsSlider;
     [SerializeField] float chillsRate = 1f;
 
+    public float lightModRate = 0.01f;
+
     [SerializeField] float positiveModifier = 1f;
 
     [SerializeField] float completedTaskSubtraction = 30f;
 
     [SerializeField] bool timerDemonModifier = false;
-
-    public bool completedOneTask = false;
 
     [SerializeField] bool dead = false;
 
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour
     [Header("Task Bar")]
     public Slider taskSlider;
 
-    [SerializeField] float maxTasks = 0f;
+    float maxTasks = 0f;
 
     public float currentTasksCompleted;
     
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour
         interactPrompt.SetActive(false);
         exitPrompt.SetActive(false);
 
+        maxTasks = taskList.Length - 1;
         taskSlider.maxValue = maxTasks + 1;
         
         shuffleTasks(taskList);
@@ -79,14 +81,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Whenever you complete a task it subtracts a small amount from the chills meter
-        if (completedOneTask && deathForcasted == false)
-        {
-            chillsSlider.value -= completedTaskSubtraction;
-            completedOneTask = false;
-        }
-
-
         // Once the meter hits its max value the death will be forecasted which means that a random number will be generated and the player will die once the timer ends
         // Once the death is forecasted they cannot lower 
         if (chillsSlider.value >= chillsSlider.maxValue && deathForcasted == false)
@@ -133,11 +127,15 @@ public class GameManager : MonoBehaviour
         {
             chillsSlider.value += chillsRate + positiveModifier;
         }
-
         // Otherwise it remains a constant rate
         else
         {
             chillsSlider.value += chillsRate;
+
+            if (!lightManager.canSleep) // Increase rate if lights are on
+            {
+                chillsSlider.value += lightModRate;
+            }
         }
     }
 
@@ -163,5 +161,15 @@ public class GameManager : MonoBehaviour
         // Replace this with whatever you want to happen once the player dies
         jumpScare.SetActive(true);
         jumpScareSound.SetActive(true);
+    }
+
+    public void CompletedTask()
+    {
+        // Whenever you complete a task it subtracts a small amount from the chills meter
+        if (deathForcasted == false)
+        {
+            chillsSlider.value -= completedTaskSubtraction;
+            currentTasksCompleted += 1;
+        }
     }
 }

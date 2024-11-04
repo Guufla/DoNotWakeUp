@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6322069afbcad9a4d8d95a508887aaac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   col: {fileID: 1862938617729678726}
   playerLayer:
     serializedVersion: 2
@@ -135,7 +135,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  taskName: Drink Water
+  activateEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  taskName: There's water on the table...
   completed: 0
   minigameUI: {fileID: 4801321898945424810, guid: 5d96f8d1441c3854cb2f5be0d924ac00, type: 3}
   minigameWin: {fileID: -2256522804510387716}
@@ -159,7 +162,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 2.5
-  m_Center: {x: 0, y: 0.81, z: 0}
+  m_Center: {x: -0.75, y: 4, z: 0}
 --- !u!82 &-2256522804510387716
 AudioSource:
   m_ObjectHideFlags: 0

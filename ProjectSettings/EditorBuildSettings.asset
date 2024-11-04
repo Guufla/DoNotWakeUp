@@ -9,12 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/GameStart.unity
     guid: a75a6dd7cfc7f234788716df56c4b933
   - enabled: 1
-    path: Assets/Scenes/GameTest.unity
-    guid: 093fc150a72f9fc46a6d09290b49337d
+    path: Assets/Scenes/Game.unity
+    guid: 430f4c48819d2e1428a1f87051e90893
   - enabled: 1
     path: Assets/Scenes/GameEnd.unity
     guid: 99136fc2e8cd737429925784250a6889
   - enabled: 1
-    path: Assets/Scenes/JumpScares.unity
-    guid: b4e8a5b6c99a6de4384c9deb62b109a5
+    path: Assets/Scenes/GameWin.unity
+    guid: cb5e82de4453c4a4984c5d544333ca3f
   m_configObjects: {}

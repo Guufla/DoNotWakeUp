@@ -5,7 +5,9 @@ using UnityEngine;
 public class LightSystemHigher : MonoBehaviour
 {
     //get all the lights
-    [SerializeField] LightIndividual[] lights;
+    public LightIndividual[] lights;
+    public Interactable winInteract;
+    public bool canSleep = true;
 
     [SerializeField] bool isAllLights;
 
@@ -19,10 +21,21 @@ public class LightSystemHigher : MonoBehaviour
     
     public void CheckLightStates()
     {
+        bool testSleep = true;
         //consoel log all light states
-        foreach(var lightObj in lights)
+        foreach(LightIndividual lightObj in lights)
         {
-            //Debug.Log($"{lightObj.name} is locked: {lightObj.isLight}");
+            if (lightObj.isLight)
+            {
+                testSleep = false;
+                break;
+            }
+        }
+
+        canSleep = testSleep;
+        if (GameManager.instance.currentTasksCompleted == GameManager.instance.taskList.Length - 1)
+        {
+            winInteract.SetActive(canSleep);
         }
     }
 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Minigame : Interactable
 {
-    public bool completed = false;
     [Header("Minigame")]
+    public bool completed = false;
     public GameObject minigameUI;
     public AudioSource minigameWin;
 
@@ -31,9 +31,8 @@ public class Minigame : Interactable
 
     public void CompleteMinigame()
     {
-        GameManager.instance.currentTasksCompleted += 1;
         completed = true;
-        GameManager.instance.completedOneTask = true;
+        GameManager.instance.CompletedTask();
         if (minigameWin)
         {
             minigameWin.Play();

@@ -2,43 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LockSystem : MonoBehaviour
+public class LockSystem : Interactable
 {
 
     [SerializeField] bool isAllLocked = false;
 
     [SerializeField] LockIndividual[] locks;
-    // Start is called before the first frame update
-    void Start()
+    bool canCheck = true;
+    
+    public override void StartEvents()
     {
         //get all the locks
         locks = GetComponentsInChildren<LockIndividual>();
+        SetLockChildren(false);
     }
 
-
-    public void CheckLockStates()
+    public void SetLockChildren(bool state)
     {
-        // checks the lock states inthe prompt
-        foreach(var lockObj in locks)
+        foreach (LockIndividual lockObj in locks)
         {
-            //Debug.Log($"{lockObj.name} is locked: {lockObj.isLocked}");
+            lockObj.SetActive(state);
         }
     }
+
     //returns bool value to see if all the locks area locked
     public bool AreAllLocksLocked()
     {
-        foreach (var lockObj in locks)
+        foreach (LockIndividual lockObj in locks)
         {
             if (!lockObj.isLocked)
+            {
+                // If any lock is unlocked, return false
                 return false;
-                //isAllLocked = false; // If any lock is unlocked, return false
+            }
         }
+
         return true;
-        //isAllLocked = true; // All locks are locked
+        // All locks are locked
     }
+
     // Update is called once per frame
     void Update()
     {
-        isAllLocked = AreAllLocksLocked();
+        if (canCheck)
+        {
+            isAllLocked = AreAllLocksLocked();
+        }
+
+        if (isAllLocked && canCheck)
+        {
+            canCheck = false;
+            interactEvent.Invoke();
+        }
     }
 }

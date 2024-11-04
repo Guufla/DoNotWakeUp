@@ -139,8 +139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plate: {fileID: 3068360855169101976}
-  maxSpeed: 100
-  speed: 50
+  maxSpeed: 5000
+  speed: 20000
   spawnDeviation: 200
   sandwiches:
   - {fileID: 8600579838305978097, guid: 94087f6aed6b4674282a362fe11140e7, type: 3}
@@ -875,9 +875,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stack 4 items without dropping
-
-    them'
+  m_text: Catch the food with A/D or <-/->
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

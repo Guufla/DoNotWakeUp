@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 039a69cc89d4ed8458f09a463a6d3125, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1e31b1774e634384aae7711870fa6b41, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -96,7 +96,7 @@ MonoBehaviour:
   rb: {fileID: 936477663971599047}
   gravityScale: 50
   spriteIcon: {fileID: 3119577071553037385}
-  pileIcon: {fileID: 21300000, guid: 039a69cc89d4ed8458f09a463a6d3125, type: 3}
+  pileIcon: {fileID: 21300000, guid: 1e31b1774e634384aae7711870fa6b41, type: 3}
   dragIcon: {fileID: 21300000, guid: f66ac19b7b3f8554eb943061ba67fffa, type: 3}
 --- !u!50 &936477663971599047
 Rigidbody2D:

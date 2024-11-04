@@ -185,6 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInLight: 0
   player: {fileID: 0}
+  islight: {fileID: 0}
 --- !u!1 &2819917291568688463
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +343,6 @@ MonoBehaviour:
         m_CallState: 2
   taskName: 
   lightSource: {fileID: 9065960766863369967}
-  player: {fileID: 0}
   lightCollision: {fileID: 8589256651372046895}
   isLight: 0
 --- !u!1 &3099286706198153606
@@ -451,7 +451,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 3
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -2, z: 0}
 --- !u!114 &7480200265522228017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,7 +502,6 @@ MonoBehaviour:
         m_CallState: 2
   taskName: 
   lightSource: {fileID: 8611844729401449201}
-  player: {fileID: 0}
   lightCollision: {fileID: 7450253967860689233}
   isLight: 0
 --- !u!1 &3524150500201124670
@@ -636,6 +635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInLight: 0
   player: {fileID: 0}
+  islight: {fileID: 0}
 --- !u!1 &3994797181895817044
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,6 +767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInLight: 0
   player: {fileID: 0}
+  islight: {fileID: 0}
 --- !u!1 &4121914017553527810
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,6 +899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInLight: 0
   player: {fileID: 0}
+  islight: {fileID: 0}
 --- !u!1 &6683474476812415185
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,7 +1057,6 @@ MonoBehaviour:
         m_CallState: 2
   taskName: 
   lightSource: {fileID: 1188149101265057991}
-  player: {fileID: 0}
   lightCollision: {fileID: 5417107512338518826}
   isLight: 0
 --- !u!1 &8329217973513065125
@@ -1215,7 +1216,6 @@ MonoBehaviour:
         m_CallState: 2
   taskName: 
   lightSource: {fileID: 8296272408794650091}
-  player: {fileID: 0}
   lightCollision: {fileID: 5216413215470377090}
   isLight: 0
 --- !u!1001 &1497814482686946421
